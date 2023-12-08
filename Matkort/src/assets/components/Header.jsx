@@ -3,7 +3,9 @@ import "../css/header.css";
 function Header() {
   return (
     <>
-      <header></header>
+      <header>
+        <h1>Restaurants</h1>
+      </header>
     </>
   );
 }
