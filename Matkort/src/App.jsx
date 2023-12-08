@@ -15,6 +15,9 @@ function App() {
             <h3>Old Times</h3>
           </div>
         </div>
+        <div className="randomizeBtn">
+          <h2>Randomize</h2>
+        </div>
       </div>
     </>
   );

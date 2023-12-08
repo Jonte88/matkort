@@ -36,3 +36,20 @@
   padding: 2vw;
   margin: 2vw;
 }
+.randomizeBtn {
+  bottom: 5vw;
+  position: fixed;
+  width: calc(100% - 16vw);
+  padding: 3vw;
+  border-radius: 10px;
+  background-color: rgb(21, 24, 27);
+}
+.randomizeBtn:hover {
+    background-color: rgb;
+}
+.randomizeBtn > h2 {
+  font-size: 8vw;
+  font-weight: 550;
+  text-align: center;
+  color: rgb(245, 166, 35);
+}
