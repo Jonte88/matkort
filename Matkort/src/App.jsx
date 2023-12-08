@@ -9,7 +9,12 @@ function App() {
           <p>Select all</p>
           <p>Deselect all</p>
         </div>
-        
+        <div className="categoryBox">
+          <h3>Hamburgers</h3>
+          <div className="restaurantBox">
+            <h3>Old Times</h3>
+          </div>
+        </div>
       </div>
     </>
   );

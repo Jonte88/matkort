@@ -1,0 +1,38 @@
+.appContainer {
+  margin-left: 5vw;
+  width: calc(100% - 10vw);
+}
+.selectionSettings {
+  margin-top: 2vw;
+  display: inline-flex;
+  padding-top: 2vw;
+  gap: 4vw;
+}
+.selectionSettings > p {
+  color: rgb(245, 166, 35);
+  font-family: sans-serif;
+  font-size: 3.5vw;
+  font-weight: 600;
+}
+.selectionSettings > p:hover {
+  color: rgb(165, 110, 21);
+  text-decoration: underline;
+}
+.categoryBox {
+  margin-top: 6vw;
+  background-color: rgb(50, 53, 58);
+  border-radius: 10px;
+  padding: 1vw;
+  width: calc(100% - 2vw);
+}
+.categoryBox > h3 {
+  font-weight: 400;
+  padding: 3vw;
+  text-align: center;
+}
+.restaurantBox {
+  background-color: rgb(65, 70, 76);
+  border-radius: 10px;
+  padding: 2vw;
+  margin: 2vw;
+}
