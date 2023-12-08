@@ -4,7 +4,13 @@ import "./App.css";
 function App() {
   return (
     <>
-      <div></div>
+      <div className="appContainer">
+        <div className="selectionSettings">
+          <p>Select all</p>
+          <p>Deselect all</p>
+        </div>
+        
+      </div>
     </>
   );
 }
