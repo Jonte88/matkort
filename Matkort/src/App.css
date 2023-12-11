@@ -1,6 +1,7 @@
 .appContainer {
   margin-left: 5vw;
   width: calc(100% - 10vw);
+  padding-bottom: 25vw;
 }
 .selectionSettings {
   margin-top: 2vw;

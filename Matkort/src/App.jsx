@@ -6,24 +6,151 @@ function App() {
     {
       id: 1,
       checked: false,
-      name: "Old Times",
-      address: "Bruksgatan 24",
-      category: "Hamburgare",
+      name: "RakThai",
+      address: "Järnvägsgatan 14",
+      category: "Thai",
     },
     {
       id: 2,
       checked: false,
-      name: "Något annat",
-      address: "Bruksgatan 24",
-      category: "Kaninmat",
+      name: "Absolute Thai",
+      address: "Bollgrogatan 3",
+      category: "Thai",
     },
     {
       id: 3,
       checked: false,
-      name: "Något helt annat",
-      address: "En annan gata 24",
-      category: "Kaninmat",
+      name: "Wok On Fire",
+      address: "Bruksgatan 1A",
+      category: "Asian Fusion",
     },
+    {
+      id: 4,
+      checked: false,
+      name: "Koreana",
+      address: "Bruksgatan 30",
+      category: "Korean",
+    },
+    {
+      id: 5,
+      checked: false,
+      name: "Maestro Pizza",
+      address: "Södra Storgatan 16",
+      category: "Pizza",
+    },
+    {
+      id: 6,
+      checked: false,
+      name: "Kebab Kungen",
+      address: "Bollbrogatan 12",
+      category: "Kebab",
+    },
+    {
+      id: 7,
+      checked: false,
+      name: "Shawarma Xpert",
+      address: "Södergatan 15",
+      category: "Middle Eastern",
+    },
+    {
+      id: 8,
+      checked: false,
+      name: "Kebab House",
+      address: "Järnvägsgatan 23",
+      category: "Kebab",
+    },
+    {
+      id: 9,
+      checked: false,
+      name: "McDonalds",
+      address: "Kungstorget 8",
+      category: "Fast Food",
+    },
+    {
+      id: 10,
+      checked: false,
+      name: "Max",
+      address: "Södergatan 15",
+      category: "Fast Food",
+    },
+    {
+      id: 11,
+      checked: false,
+      name: "Cafe Birger",
+      address: "Bollbrogatan 1",
+      category: "Cafe",
+    },
+    {
+      id: 12,
+      checked: false,
+      name: "Sweet House Cafe",
+      address: "Södergatan 18",
+      category: "Cafe",
+    },
+    {
+      id: 13,
+      checked: false,
+      name: "Evas Cafe",
+      address: "Nedre Nytorgsgatan 26",
+      category: "Cafe",
+    },
+    {
+      id: 14,
+      checked: false,
+      name: "Wayne's Coffee",
+      address: "Södergatan 30",
+      category: "Cafe",
+    },
+    {
+      id: 15,
+      checked: false,
+      name: "Subway",
+      address: "Möllegränden 2",
+      category: "Sandwiches",
+    },
+    {
+      id: 16,
+      checked: false,
+      name: "Old Times",
+      address: "Bruksgatan 24",
+      category: "Everything",
+    },
+    {
+      id: 17,
+      checked: false,
+      name: "Sugoi",
+      address: "Järnvägsgatan 9",
+      category: "Sushi",
+    },
+    {
+      id: 18,
+      checked: false,
+      name: "Taco Bar",
+      address: "Södergatan 11",
+      category: "Mexican",
+    },
+    {
+      id: 19,
+      checked: false,
+      name: "Libanesisk Resturang",
+      address: "Carl Crooks Gata 46",
+      category: "Everything",
+    },
+    {
+      id: 20,
+      checked: false,
+      name: "Pastastationen",
+      address: "Knutpunkten 70",
+      category: "Pasta",
+    },
+    {
+      id: 21,
+      checked: false,
+      name: "Resturang Celina",
+      address: "Carl Crooks Gata 49",
+      category: "Everything",
+    },
+
     // Add more checkbox objects if needed
   ]);
 
@@ -98,7 +225,7 @@ function App() {
           ))}
         </div>
         <div className="randomizeBtn">
-          <h2>Randomize</h2>
+          <h2 onClick={console.log(checkboxes)}>Randomize</h2>
         </div>
       </div>
     </>
