@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Result from "./assets/components/result"; // Update the path based on your project structure
 import "./App.css";
 
 function App() {
@@ -155,6 +156,16 @@ function App() {
     // Add more checkbox objects if needed
   ]);
 
+  if (localStorage) {
+    const [checkboxes, setCheckboxes] = useState(
+      localStorage.getItem("name") || ""
+    );
+    console.log("Its there!");
+  } else {
+    localStorage.setItem([checkboxes, setCheckboxes]);
+    console.log("Nothing here...");
+  }
+
   const selectAllCheckboxes = () => {
     const updatedCheckboxes = checkboxes.map((checkbox) => ({
       ...checkbox,
@@ -226,7 +237,13 @@ function App() {
           ))}
         </div>
         <div className="randomizeBtn">
-          <Link to="/result">
+          <Link
+            to={{
+              pathname: "/result",
+              state: { checkboxes: checkboxes },
+            }}
+          >
+            {" "}
             <h2>Randomize</h2>
           </Link>
         </div>
