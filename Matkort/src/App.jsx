@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./App.css";
 
 function App() {
@@ -225,7 +226,9 @@ function App() {
           ))}
         </div>
         <div className="randomizeBtn">
-          <h2 onClick={console.log(checkboxes)}>Randomize</h2>
+          <Link to="/result">
+            <h2>Randomize</h2>
+          </Link>
         </div>
       </div>
     </>

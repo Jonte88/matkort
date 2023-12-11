@@ -5,6 +5,7 @@ import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import App from "./App.jsx";
 import Header from "./assets/components/header.jsx";
+import Result from "./assets/components/result.jsx";
 
 const Wrapper = () => (
   <>
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <App />,
+      },
+      {
+        path: "/result",
+        element: <Result />,
       },
     ],
   },
