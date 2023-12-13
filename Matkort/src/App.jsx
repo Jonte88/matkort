@@ -1,170 +1,174 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Result from "./assets/components/result"; // Update the path based on your project structure
 import "./App.css";
 
 function App() {
-  const [checkboxes, setCheckboxes] = useState([
-    {
-      id: 1,
-      checked: false,
-      name: "RakThai",
-      address: "Järnvägsgatan 14",
-      category: "Thai",
-    },
-    {
-      id: 2,
-      checked: false,
-      name: "Absolute Thai",
-      address: "Bollgrogatan 3",
-      category: "Thai",
-    },
-    {
-      id: 3,
-      checked: false,
-      name: "Wok On Fire",
-      address: "Bruksgatan 1A",
-      category: "Asian Fusion",
-    },
-    {
-      id: 4,
-      checked: false,
-      name: "Koreana",
-      address: "Bruksgatan 30",
-      category: "Korean",
-    },
-    {
-      id: 5,
-      checked: false,
-      name: "Maestro Pizza",
-      address: "Södra Storgatan 16",
-      category: "Pizza",
-    },
-    {
-      id: 6,
-      checked: false,
-      name: "Kebab Kungen",
-      address: "Bollbrogatan 12",
-      category: "Kebab",
-    },
-    {
-      id: 7,
-      checked: false,
-      name: "Shawarma Xpert",
-      address: "Södergatan 15",
-      category: "Middle Eastern",
-    },
-    {
-      id: 8,
-      checked: false,
-      name: "Kebab House",
-      address: "Järnvägsgatan 23",
-      category: "Kebab",
-    },
-    {
-      id: 9,
-      checked: false,
-      name: "McDonalds",
-      address: "Kungstorget 8",
-      category: "Fast Food",
-    },
-    {
-      id: 10,
-      checked: false,
-      name: "Max",
-      address: "Södergatan 15",
-      category: "Fast Food",
-    },
-    {
-      id: 11,
-      checked: false,
-      name: "Cafe Birger",
-      address: "Bollbrogatan 1",
-      category: "Cafe",
-    },
-    {
-      id: 12,
-      checked: false,
-      name: "Sweet House Cafe",
-      address: "Södergatan 18",
-      category: "Cafe",
-    },
-    {
-      id: 13,
-      checked: false,
-      name: "Evas Cafe",
-      address: "Nedre Nytorgsgatan 26",
-      category: "Cafe",
-    },
-    {
-      id: 14,
-      checked: false,
-      name: "Wayne's Coffee",
-      address: "Södergatan 30",
-      category: "Cafe",
-    },
-    {
-      id: 15,
-      checked: false,
-      name: "Subway",
-      address: "Möllegränden 2",
-      category: "Sandwiches",
-    },
-    {
-      id: 16,
-      checked: false,
-      name: "Old Times",
-      address: "Bruksgatan 24",
-      category: "Everything",
-    },
-    {
-      id: 17,
-      checked: false,
-      name: "Sugoi",
-      address: "Järnvägsgatan 9",
-      category: "Sushi",
-    },
-    {
-      id: 18,
-      checked: false,
-      name: "Taco Bar",
-      address: "Södergatan 11",
-      category: "Mexican",
-    },
-    {
-      id: 19,
-      checked: false,
-      name: "Libanesisk Resturang",
-      address: "Carl Crooks Gata 46",
-      category: "Everything",
-    },
-    {
-      id: 20,
-      checked: false,
-      name: "Pastastationen",
-      address: "Knutpunkten 70",
-      category: "Pasta",
-    },
-    {
-      id: 21,
-      checked: false,
-      name: "Resturang Celina",
-      address: "Carl Crooks Gata 49",
-      category: "Everything",
-    },
+  const [checkboxes, setCheckboxes] = useState(() => {
+    // Check if there is data in local storage
+    const storedData = localStorage.getItem("checkboxes");
+    if (storedData) {
+      // If data is found, parse and return it
+      return JSON.parse(storedData);
+    } else {
+      // If no data is found, return the initial state
+      return [
+        {
+          id: 1,
+          checked: true,
+          name: "RakThai",
+          address: "Järnvägsgatan 14",
+          category: "Thai",
+        },
+        {
+          id: 2,
+          checked: true,
+          name: "Absolute Thai",
+          address: "Bollgrogatan 3",
+          category: "Thai",
+        },
+        {
+          id: 3,
+          checked: true,
+          name: "Wok On Fire",
+          address: "Bruksgatan 1A",
+          category: "Asian Fusion",
+        },
+        {
+          id: 4,
+          checked: true,
+          name: "Koreana",
+          address: "Bruksgatan 30",
+          category: "Korean",
+        },
+        {
+          id: 5,
+          checked: true,
+          name: "Maestro Pizza",
+          address: "Södra Storgatan 16",
+          category: "Pizza",
+        },
+        {
+          id: 6,
+          checked: true,
+          name: "Kebab Kungen",
+          address: "Bollbrogatan 12",
+          category: "Kebab",
+        },
+        {
+          id: 7,
+          checked: true,
+          name: "Shawarma Xpert",
+          address: "Södergatan 15",
+          category: "Middle Eastern",
+        },
+        {
+          id: 8,
+          checked: true,
+          name: "Kebab House",
+          address: "Järnvägsgatan 23",
+          category: "Kebab",
+        },
+        {
+          id: 9,
+          checked: true,
+          name: "McDonalds",
+          address: "Kungstorget 8",
+          category: "Fast Food",
+        },
+        {
+          id: 10,
+          checked: true,
+          name: "Max",
+          address: "Södergatan 15",
+          category: "Fast Food",
+        },
+        {
+          id: 11,
+          checked: true,
+          name: "Cafe Birger",
+          address: "Bollbrogatan 1",
+          category: "Cafe",
+        },
+        {
+          id: 12,
+          checked: true,
+          name: "Sweet House Cafe",
+          address: "Södergatan 18",
+          category: "Cafe",
+        },
+        {
+          id: 13,
+          checked: true,
+          name: "Evas Cafe",
+          address: "Nedre Nytorgsgatan 26",
+          category: "Cafe",
+        },
+        {
+          id: 14,
+          checked: true,
+          name: "Wayne's Coffee",
+          address: "Södergatan 30",
+          category: "Cafe",
+        },
+        {
+          id: 15,
+          checked: true,
+          name: "Subway",
+          address: "Möllegränden 2",
+          category: "Sandwiches",
+        },
+        {
+          id: 16,
+          checked: true,
+          name: "Old Times",
+          address: "Bruksgatan 24",
+          category: "Everything",
+        },
+        {
+          id: 17,
+          checked: true,
+          name: "Sugoi",
+          address: "Järnvägsgatan 9",
+          category: "Sushi",
+        },
+        {
+          id: 18,
+          checked: true,
+          name: "Taco Bar",
+          address: "Södergatan 11",
+          category: "Mexican",
+        },
+        {
+          id: 19,
+          checked: true,
+          name: "Libanesisk Resturang",
+          address: "Carl Crooks Gata 46",
+          category: "Everything",
+        },
+        {
+          id: 20,
+          checked: true,
+          name: "Pastastationen",
+          address: "Knutpunkten 70",
+          category: "Pasta",
+        },
+        {
+          id: 21,
+          checked: true,
+          name: "Resturang Celina",
+          address: "Carl Crooks Gata 49",
+          category: "Everything",
+        },
+        // ... (rest of your checkboxes)
+      ];
+    }
+  });
 
-    // Add more checkbox objects if needed
-  ]);
-
-  if (localStorage) {
-    const [checkboxes, setCheckboxes] = useState(
-      localStorage.getItem("name") || ""
-    );
-    console.log("Its there!");
-  } else {
-    localStorage.setItem([checkboxes, setCheckboxes]);
-    console.log("Nothing here...");
-  }
+  useEffect(() => {
+    // Update local storage whenever checkboxes change
+    localStorage.setItem("checkboxes", JSON.stringify(checkboxes));
+  }, [checkboxes]);
 
   const selectAllCheckboxes = () => {
     const updatedCheckboxes = checkboxes.map((checkbox) => ({
