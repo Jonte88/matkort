@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import "../css/result.css";
 
 const Result = () => {
   const location = useLocation();
@@ -25,23 +26,27 @@ const Result = () => {
 
   return (
     <div>
-      <Link
-        to={{
-          pathname: "/",
-        }}
-      >
-        {" "}
-        <p>Go Back</p>
-      </Link>
-      {randomRestaurant ? (
-        <div>
-          <h2>{randomRestaurant.name}</h2>
-          <h5>{randomRestaurant.address}</h5>
-          <p>{randomRestaurant.category}</p>
-        </div>
-      ) : (
-        <p>You need to choose a Resturant</p>
-      )}
+      <div className="goBackText">
+        <Link
+          to={{
+            pathname: "/",
+          }}
+        >
+          {" "}
+          <p>&larr; Go Back</p>
+        </Link>
+      </div>
+      <div className="resturantResultDiv">
+        {randomRestaurant ? (
+          <div className="resturantResultInfo">
+            <p>{randomRestaurant.category}</p>
+            <h2>{randomRestaurant.name}</h2>
+            <h5>{randomRestaurant.address}</h5>
+          </div>
+        ) : (
+          <p>You need to choose a Resturant</p>
+        )}
+      </div>
     </div>
   );
 };
