@@ -44,7 +44,7 @@ const Result = () => {
             <h5>{randomRestaurant.address}</h5>
           </div>
         ) : (
-          <p>You need to choose a Resturant</p>
+          <p>You need to choose a Restaurant</p>
         )}
       </div>
     </div>

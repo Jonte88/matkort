@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <header>
-      <h1>{currentPage === "main" ? "Resturants" : "Result"}</h1>
+      <h1>{currentPage === "main" ? "Restaurants" : "Result"}</h1>
     </header>
   );
 };

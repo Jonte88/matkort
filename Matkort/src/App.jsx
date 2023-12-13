@@ -233,7 +233,9 @@ function App() {
                       <p>{checkbox.address}</p>
                     </div>
                     <div className="restaurantBoxMoreInfo">
-                      <span>i</span>
+                      <Link to={`/restaurant/${checkbox.id}`}>
+                        <span>i</span>
+                      </Link>
                     </div>
                   </div>
                 ))}
