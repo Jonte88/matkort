@@ -152,7 +152,7 @@
   .randomizeBtn {
     display: flex;
     justify-content: center;
-    bottom: 5vw;
+    bottom: 1vw;
     width: calc(100% - 16vw);
     margin: auto;
     max-width: calc(390px);

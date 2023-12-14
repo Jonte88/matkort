@@ -22,6 +22,8 @@
 }
 @media screen and (min-width: 500px) {
   .bigContainer {
+    margin-top: 2vw;
+    margin-bottom: 1vw;
     padding: 1vw;
     border-radius: 20px;
   }
