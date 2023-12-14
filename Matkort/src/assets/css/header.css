@@ -13,3 +13,14 @@ header > h1 {
   font-weight: 600;
   font-size: 12.5vw;
 }
+@media screen and (min-width: 500px) {
+  header {
+    height: 17%;
+    max-width: 500px;
+  }
+  header > h1 {
+    margin-top: 1vw;
+    margin-left: 5%;
+    font-size: 4vw;
+  }
+}
