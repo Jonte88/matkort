@@ -122,6 +122,7 @@ function App() {
               pathname: "/result",
               state: { checkboxes: checkboxes },
             }}
+            className="randomLink"
           >
             {" "}
             <h2>Randomize</h2>
