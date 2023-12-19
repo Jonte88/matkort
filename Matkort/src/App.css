@@ -92,15 +92,18 @@
   width: calc(100% - 16vw);
   padding: 3vw;
   border-radius: 10px;
-  text-decoration: none;
+  text-decoration: none !important;
   background-color: rgb(21, 24, 27);
   transition: all 100ms ease-in-out;
+}
+Link {
+  text-decoration: none !important;
 }
 .randomizeBtn:hover {
   background-color: rgb(9, 11, 12);
 }
 .randomizeBtn h2 {
-  text-decoration: none;
+  text-decoration: none !important;
   font-size: 8vw;
   font-weight: 550;
   text-align: center;
