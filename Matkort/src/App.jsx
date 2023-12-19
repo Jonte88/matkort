@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Result from "./assets/components/result"; // Update the path based on your project structure
+import axios from "axios";
 import "./App.css";
+import Result from "./assets/components/result"; // Update the path based on your project structure
 
 function App() {
   const [checkboxes, setCheckboxes] = useState(() => {
@@ -165,6 +166,24 @@ function App() {
     }
   });
 
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    // Fetch data when the component mounts
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://restaurant.pockethost.io/api/collections/restaurant/records"
+        );
+        // console.log("API Response:", response.data); // Log the API response
+        setItems(response.data.items);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
   useEffect(() => {
     // Update local storage whenever checkboxes change
     localStorage.setItem("checkboxes", JSON.stringify(checkboxes));
@@ -203,6 +222,16 @@ function App() {
   return (
     <>
       <div className="appContainer">
+        {/* Check if items is an array before using map */}
+        {Array.isArray(items) ? (
+          items.map((item) => (
+            <li key={item.id}>
+              {item.name} {item.address} {item.category}
+            </li>
+          ))
+        ) : (
+          <p>No items to display</p>
+        )}
         <div className="selectionSettings">
           <p onClick={selectAllCheckboxes}>Select all</p>
           <p onClick={deselectAllCheckboxes}>Deselect all</p>
