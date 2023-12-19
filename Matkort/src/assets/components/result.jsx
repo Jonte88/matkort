@@ -39,9 +39,8 @@ const Result = () => {
       <div className="resturantResultDiv">
         {randomRestaurant ? (
           <div className="resturantResultInfo">
-            <p>{randomRestaurant.category}</p>
             <h2>{randomRestaurant.name}</h2>
-            <h5>{randomRestaurant.address}</h5>
+            <p>{randomRestaurant.address}</p>
           </div>
         ) : (
           <p>You need to choose a Restaurant</p>

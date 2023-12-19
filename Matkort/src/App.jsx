@@ -40,6 +40,7 @@ function App() {
       id: item.id,
       checked: true,
       name: item.name,
+      address: item.address,
     }));
     setCheckboxes(updatedCheckboxes);
   };
@@ -105,11 +106,11 @@ function App() {
                       <h3>{item.name}</h3>
                       <p>{item.address}</p>
                     </div>
-                    <div className="restaurantBoxMoreInfo">
+                    {/* <div className="restaurantBoxMoreInfo">
                       <Link to={`/restaurant/${item.id}`}>
                         <span>i</span>
                       </Link>
-                    </div>
+                    </div> */}
                   </div>
                 ))}
             </div>
