@@ -92,7 +92,7 @@ function App() {
                         className="hidden-checkbox"
                         checked={
                           checkboxes.find((c) => c.id === item.id)?.checked ||
-                          false
+                          true
                         }
                         onChange={() => checkboxChange(item.id)}
                         id={`checkbox-${item.id}`}
